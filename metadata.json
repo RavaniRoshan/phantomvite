@@ -1,0 +1,6 @@
+{
+  "name": "Vessa - Animated Brand Guidelines",
+  "description": "Vessa turns your brand into a live page you send as a link. Colors copy when you click them, the motion plays right in the page, and Claude or Cursor can build the whole thing with you.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

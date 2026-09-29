@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import "./styles/vessa.css";
+
+html {
+  font-family: var(--vessa-font);
+  scroll-behavior: smooth;
+  background-color: var(--vessa-paper);
+  color: var(--vessa-ink);
+}
+
+body {
+  font-family: var(--vessa-font);
+  background-color: var(--vessa-paper);
+  color: var(--vessa-ink);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Authentic Wire Pulse Animations */
+@keyframes wirePulse {
+  0% { stroke-dashoffset: 10px; opacity: 1; }
+  100% { stroke-dashoffset: -100px; opacity: 1; }
+}
+
+.wire-pulse {
+  stroke-linecap: round;
+  stroke: var(--vessa-accent) !important;
+  stroke-width: 2px !important;
+  stroke-dasharray: 10 100 !important;
+  opacity: 1 !important;
+  animation: wirePulse 1.6s ease-in-out infinite;
+}
+
+.wire-pulse:nth-child(4) { animation-delay: 0s; }
+.wire-pulse:nth-child(5) { animation-delay: 0.16s; }
+.wire-pulse:nth-child(6) { animation-delay: 0.32s; }
+
+/* MCP Connect Diagram Pulse Animations */
+@keyframes pulseFan {
+  0% { stroke-dashoffset: -100px; opacity: 0; }
+  15% { opacity: 1; }
+  50% { stroke-dashoffset: 30px; opacity: 1; }
+  70% { opacity: 0; }
+  100% { stroke-dashoffset: 30px; opacity: 0; }
+}
+
+@keyframes pulseDrop {
+  0%, 35% { stroke-dashoffset: -100px; opacity: 0; }
+  45% { opacity: 1; }
+  75% { stroke-dashoffset: 40px; opacity: 1; }
+  90% { opacity: 0; }
+  100% { stroke-dashoffset: 40px; opacity: 0; }
+}
+
+.c-pulse {
+  stroke: var(--vessa-accent);
+  stroke-width: 1.5px;
+  fill: none;
+  visibility: visible !important;
+}
+
+.c-pulse--fan {
+  stroke-dasharray: 16 300;
+  stroke-dashoffset: -100px;
+  animation: pulseFan 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.c-pulse--drop {
+  stroke-dasharray: 28 300;
+  stroke-dashoffset: -100px;
+  animation: pulseDrop 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Copied Note Animation */
+@keyframes copiedBurst {
+  0% { transform: scale(0.6); opacity: 0; }
+  30% { transform: scale(1.15); opacity: 1; }
+  70% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.copied-cursor {
+  animation: copiedBurst 2s ease-in-out infinite;
+}
+
+/* Top Glow Field Styling */
+.top-glow-field {
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+}
